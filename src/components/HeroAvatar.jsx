@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-
+import LogoImg from "../assets/favicon.svg"
 
 function HeroAvatar() {
     return (
@@ -17,7 +17,7 @@ function HeroAvatar() {
                 className="w-full h-full border border-slate-900 rounded-full flex items-center justify-center bg-slate-900/10 backdrop-blur-md relative overflow-visible"
             >
                 <img
-                    src="/favicon.svg"
+                    src={LogoImg}
                     alt="dewz logo"
                     className="w-[85%] h-[85%] object-cover rounded-full filter drop-shadow-[0_0_25px_rgba(147,54,180,0.4)]"
                     onError={(e) => {
