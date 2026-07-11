@@ -1,0 +1,90 @@
+---
+import { FaFacebook, FaGithub, FaInstagram, FaYoutube } from "react-icons/fa";
+import { SITE } from "../consts/index.js";
+import HeroAvatar from "./HeroAvatar";
+import { FaThreads } from "react-icons/fa6";
+
+const socialLinks = [
+  { Icon: FaGithub, href: SITE.socials.github },
+  { Icon: FaInstagram, href: SITE.socials.instagram },
+  { Icon: FaYoutube, href: SITE.socials.youtube },
+  { Icon: FaThreads, href: SITE.socials.threads },
+  { Icon: FaFacebook, href: SITE.socials.facebook },
+];
+---
+
+<section
+  id="home"
+  class="max-w-6xl mx-auto min-h-[calc(100dvh-64px)] flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-16 px-4 md:px-8 py-16 md:py-0 scroll-mt-16 text-white relative overflow-hidden border-b border-slate-900/40"
+>
+  <div
+    class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none animate-pulse duration-6000"
+  >
+  </div>
+  <div
+    class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-highlight/5 rounded-full blur-[100px] pointer-events-none animate-pulse duration-4000"
+  >
+  </div>
+
+  <div
+    class="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"
+  >
+  </div>
+
+  <div
+    class="flex-1 text-center md:text-left space-y-6 z-10 py-2 md:flex md:justify-center md:items-start md:flex-col"
+  >
+    <span
+      class="inline-flex items-center gap-2 bg-slate-900/80 text-highlight text-xs font-semibold px-4 py-1.5 rounded-full border border-slate-800/60 tracking-wider"
+    >
+      <span class="w-2 h-2 rounded-full bg-highlight animate-pulse"></span>
+      {SITE.status}
+    </span>
+    <h1
+      class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none"
+    >
+      Hey! I'm <br class="hidden md:block" />
+      <span
+        class="bg-linear-to-r from-primary via-secondary to-highlight bg-clip-text text-transparent"
+      >
+        {SITE.name}
+      </span>
+    </h1>
+    <p class="text-lg md:text-xl font-medium text-slate-300">{SITE.role}</p>
+    <p
+      class="text-sm md:text-base text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed"
+    >
+      {SITE.tagline}
+    </p>
+    <div
+      class="flex items-center justify-center md:justify-start p-2 gap-5 md:gap-7"
+    >
+      {
+        socialLinks.map((social) => {
+          // To render a component in Astro use a var and first char is Capital
+
+          const Icon = social.Icon;
+          return (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-slate-400 hover:text-secondary transition-all duration-300 text-2xl hover:scale-110 filter drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]"
+            >
+              <Icon />
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+  <div class="flex-1 flex items-center justify-center z-10">
+    <div class="relative group">
+      <div
+        class="absolute inset-0 bg-linear-to-r from-primary to-highlight rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"
+      >
+      </div>
+      <HeroAvatar client:load />
+    </div>
+  </div>
+</section>

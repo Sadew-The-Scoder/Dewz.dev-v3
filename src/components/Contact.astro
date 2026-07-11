@@ -1,0 +1,140 @@
+---
+// src/components/Contact.astro
+import { SITE } from "../consts/index.js";
+import NeonText from "./NeonText";
+---
+
+<section
+    id="contact"
+    class="max-w-6xl mx-auto min-h-[calc(100dvh-64px)] scroll-mt-16 relative overflow-hidden flex flex-col justify-center px-4 md:px-8 py-16 text-white border-b border-slate-900/40"
+>
+    <div
+        class="absolute bottom-1/4 left-0 w-80 h-80 bg-neon-pink/5 rounded-full blur-[120px] pointer-events-none animate-pulse duration-5000"
+    >
+    </div>
+
+    <div
+        class="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"
+    >
+    </div>
+
+    <div class="w-full space-y-12 z-10">
+        <div class="text-center md:text-left space-y-3">
+            <NeonText class="text-3xl md:text-left">Get In Touch</NeonText>
+            <p
+                class="text-sm md:text-base text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed font-mono"
+            >
+                // Let's build something cool together or just talk tech.
+            </p>
+        </div>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center"
+        >
+            <div class="md:col-span-6 space-y-6 text-center md:text-left">
+                <h3
+                    class="text-xl md:text-2xl font-bold text-slate-200 tracking-wide font-sans"
+                >
+                    Have an exciting project or idea?
+                </h3>
+                <p
+                    class="text-slate-400 text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0"
+                >
+                    I'm always open to discussing web development, low-level
+                    software architectures, DevOps workflows, or even tweaking
+                    Linux configurations. Drop me an email, and I'll get back to
+                    you as soon as possible.
+                </p>
+
+                <div class="pt-4">
+                    <a
+                        href={`mailto:${SITE.email}`}
+                        class="inline-flex items-center gap-3 bg-slate-900/30 border border-slate-900/80 hover:border-neon-pink/40 text-slate-300 hover:text-neon-pink px-6 py-3.5 rounded-2xl transition-all duration-300 backdrop-blur-sm font-mono text-xs md:text-sm group"
+                    >
+                        <span>{SITE.email}</span>
+                        <span
+                            class="group-hover:translate-x-1 group-hover:translate-y-[-2px] transition-transform duration-300"
+                            >↗</span
+                        >
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-6 w-full">
+                <div class="grid grid-cols-2 gap-4">
+                    {
+                        SITE.socials.github && (
+                            <a
+                                href={SITE.socials.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-slate-900/20 border border-slate-900/80 hover:border-neon-yellow/30 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 flex flex-col justify-between min-h-[100px] group"
+                            >
+                                <span class="text-[10px] font-mono text-slate-500">
+                                    // github
+                                </span>
+                                <span class="text-sm font-bold text-slate-300 group-hover:text-neon-yellow transition-colors mt-4 flex items-center justify-between">
+                                    GitHub <span class="text-xs">↗</span>
+                                </span>
+                            </a>
+                        )
+                    }
+
+                    {
+                        SITE.socials.youtube && (
+                            <a
+                                href={SITE.socials.youtube}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-slate-900/20 border border-slate-900/80 hover:border-neon-pink/30 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 flex flex-col justify-between min-h-[100px] group"
+                            >
+                                <span class="text-[10px] font-mono text-slate-500">
+                                    // channel
+                                </span>
+                                <span class="text-sm font-bold text-slate-300 group-hover:text-neon-pink transition-colors mt-4 flex items-center justify-between">
+                                    YouTube <span class="text-xs">↗</span>
+                                </span>
+                            </a>
+                        )
+                    }
+
+                    {
+                        SITE.socials.instagram && (
+                            <a
+                                href={SITE.socials.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-slate-900/20 border border-slate-900/80 hover:border-neon-purple/30 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 flex flex-col justify-between min-h-[100px] group"
+                            >
+                                <span class="text-[10px] font-mono text-slate-500">
+                                    // connect
+                                </span>
+                                <span class="text-sm font-bold text-slate-300 group-hover:text-neon-purple transition-colors mt-4 flex items-center justify-between">
+                                    Instagram <span class="text-xs">↗</span>
+                                </span>
+                            </a>
+                        )
+                    }
+
+                    {
+                        SITE.socials.facebook && (
+                            <a
+                                href={SITE.socials.facebook}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-slate-900/20 border border-slate-900/80 hover:border-slate-700 p-4 rounded-xl backdrop-blur-sm transition-all duration-300 flex flex-col justify-between min-h-[100px] group"
+                            >
+                                <span class="text-[10px] font-mono text-slate-500">
+                                    // profile
+                                </span>
+                                <span class="text-sm font-bold text-slate-300 group-hover:text-white transition-colors mt-4 flex items-center justify-between">
+                                    Facebook <span class="text-xs">↗</span>
+                                </span>
+                            </a>
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

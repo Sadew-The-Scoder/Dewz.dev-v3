@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* 40128B - 1 -> Primary*/
+/* 9336B4 - 2 -> Secondary*/
+/* DD58D6 - 3 -> Accent*/
+/* FFE79B - 4 -> Highlight*/
+
+@theme {
+
+  --font-sans: 'JetBrains Mono', monospace;
+
+  --color-primary: #40128b;
+  --color-secondary: #9336b4;
+  --color-accent: #dd58d6;
+  --color-highlight: #ffe79b;
+}
+
+html {
+  scroll-behavior: smooth;
+}

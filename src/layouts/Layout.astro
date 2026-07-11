@@ -1,0 +1,20 @@
+---
+import Navbar from "../components/Navbar.jsx";
+import "../styles/global.css";
+const { title = "Dewz | Portfolio V3" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased min-h-dvh min-w-dvw">
+    <Navbar client:load />
+    <slot />
+  </body>
+</html>

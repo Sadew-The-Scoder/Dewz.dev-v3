@@ -1,0 +1,32 @@
+---
+// src/components/Footer.astro
+import { SITE } from "../consts/index.js";
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+    class="max-w-6xl mx-auto px-4 md:px-8 py-8 border-t border-slate-900/40 text-slate-500 font-mono text-xs flex flex-col sm:flex-row justify-between items-center gap-4 z-10 relative bg-transparent"
+>
+    <!-- Left Side: Copyright notice -->
+    <div class="text-center sm:text-left tracking-wide">
+        <span>&copy; {currentYear} {SITE.name}. All rights reserved.</span>
+    </div>
+
+    <!-- Right Side: Tech Stack info or status line -->
+    <div
+        class="flex items-center gap-2 text-slate-600 justify-center sm:justify-end"
+    >
+        <span>Built with</span>
+        <span
+            class="text-neon-purple/80 hover:text-neon-purple transition-colors duration-200"
+            >Astro</span
+        >
+        <span>&amp;</span>
+        <span
+            class="text-neon-pink/80 hover:text-neon-pink transition-colors duration-200"
+            >Tailwind CSS</span
+        >
+        <span class="text-slate-800">|</span>
+        <span class="text-neon-yellow/60">v3.0</span>
+    </div>
+</footer>
